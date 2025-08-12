@@ -81,8 +81,9 @@ kafka-console-producer.sh --topic multi-part-topic --bootstrap-server localhost:
 # Partition:0 : key4 : msg-h
 
 # Observations:
-# 1. same key => same hash => same partition
-# 2. ordering of keys is maintained (per partition)
+# 1. Same key → same partition (hash-based mapping)
+# 2. Ordering is guaranteed within a partition
+# 3. Without keys → default round robin (if using a real producer, not CLI single session)
 
 # [kafka:1, kafka:2] exit
 
